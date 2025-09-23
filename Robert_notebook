@@ -13,3 +13,15 @@
 	further researching LeRobot hardware and how it works
 	helping with Scrumwise setup
 	found specifications for the robot arm hardware
+		SO-101 robotic arm https://maxboels.com/projects/lerobot-so101
+		hardware:
+			6 degrees of freedom (6-DOF)
+			High-resolution RGB cameras for visual perception
+			Force/torque sensors for haptic feedback
+		performance:
+			850mm reach radius (0.85 m)
+			Payload capacity: 3kg
+			Repeatability: ±0.1mm
+			Control frequency: 1000Hz
+			Visual processing: 30fps real-time
+			Language instruction processing: Sub-second response
