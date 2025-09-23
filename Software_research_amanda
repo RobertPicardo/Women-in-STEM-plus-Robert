@@ -1,0 +1,14 @@
+Robotics & Control Frameworks
+  - LeRobot (Hugging Face) - the main framework for SO-101 arms (teleoperation, dataset collection, imitation learning).
+  - Phospho AI SO-101 Quikstart Tools - for calibration, leader/follower setup, and teleop demos.
+  - ROS 2 (Robot Operating System 2) - middleware for robotics; helpful for camera integration, motion control, and system safety.
+  - Issac Sim & Issac Lab (NVIDIA Omniverse) - simulation environments for reinforcement learning, real-to-sim transfer, and visualization.
+
+Machine Learning & Policy Training
+  - PyTorch - core ML framework for imitation learning, behavior cloning, DAgger, and residual learning.
+  - Hugging Face Transformers / Datasets - dataset handling, aggregation, and reproducibilty.
+  - Stable Baselines3 - pre-built RL ALGORITHMS (useful if you add reinforcement learning beyond imitation
+
+Computer Vision & Sensing
+  - OpenCV - camera calibration, object detection (colors/shapes for sorting).
+  - PytTorch/TensorFlow-based vision models - if you extend to object recognition beyond color/shape.
