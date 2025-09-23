@@ -7,3 +7,11 @@ Sept 18, 2025
 - finalizing project proposal
 - research on imitation learning: https://huggingface.co/docs/lerobot/en/il_robots
 - guide for setting up cameras: https://huggingface.co/docs/lerobot/en/cameras#setup-cameras
+
+Sept 23, 2025
+- software research: https://huggingface.co/docs/lerobot/en/installation
+- Do we have to download LeRobot as well to get datasheets, or will NVIDIA also give datasheets?
+- might have to download Lerobot software to get data during robot tests
+- robot simulation link: https://huggingface.co/docs/lerobot/en/hilserl_sim
+
+
