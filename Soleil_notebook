@@ -47,3 +47,7 @@ Thrusday 10AM Rm235 Grad meeting with Akbas
   - Start new sprint on scrumwise, make sure backlog is set
   - Start download of new software on desktop computer in Micaplex
   - Work on SRS
+
+10-14-25
+  - Watched video on importing URDF files into IsaacSim. Downloaded a URDF file from Github for the SO101 arm and tried to import it to Isaacsim. It did not import properly first try. 
+    Tried troubleshooting, fixed some errors in the URDF file
