@@ -51,3 +51,12 @@ Thrusday 10AM Rm235 Grad meeting with Akbas
 10-14-25
   - Watched video on importing URDF files into IsaacSim. Downloaded a URDF file from Github for the SO101 arm and tried to import it to Isaacsim. It did not import properly first try. 
     Tried troubleshooting, fixed some errors in the URDF file
+
+10-18-25
+  - Worked on SRS for half an hour makinig small changes while reading over sections
+
+10-19-25
+  -Worked on getting IsaacLab to import the urdf file for the so101 arm that I found on GitHub
+  -Had to update the graphics drivers
+  - git lfs to get usd files to import into Isaaclab
+  - ran simulation for reaching a certain point
