@@ -55,9 +55,14 @@ Thrusday 10AM Rm235 Grad meeting with Akbas
 10-18-25
   - Worked on SRS for half an hour makinig small changes while reading over sections
 
-10-19-25
+10-19-25 9am to 4pm
   -Worked on getting IsaacLab to import the urdf file for the so101 arm that I found on GitHub
   -Had to update the graphics drivers
   - git lfs to get usd files to import into Isaaclab
   - ran simulation for reaching a certain point
   - ran simulation for picking up a block
+
+10-19-25 8pm
+  - Finished formatting of SRS: Change font color back to black, remove section descriptions from template
+  - Renumbers all of the requiements from random number scheme to more of a hotel floor number scheme
+  - Worked on completing a couple sections and removing sections that did not pertain to our project
