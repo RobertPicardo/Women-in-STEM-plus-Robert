@@ -37,3 +37,12 @@
 
 10/21/25
 - Added backlog items to Sprint
+- Set up leader and follower on Desktop
+  CODE TO RUN FOR THAT:
+snoopy - name of leader arm
+woodstock - name of follwer arm
+top usb c port - /dev/ttyACM0 (used for follower arm)
+bottom usb c port - /ev/ttyACM1 (used for leader arm)
+runs teleoperate arms:
+lerobot-teleoperate     --robot.type=so101_follower     --robot.port=/dev/ttyACM0     --robot.id=woodstock     --teleop.type=so101_leader     --teleop.port=/dev/ttyACM1     --teleop.id=snoopy
+Helpful link in setting up arms: https://huggingface.co/docs/lerobot/en/so101?example=Linux
