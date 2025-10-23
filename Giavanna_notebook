@@ -41,14 +41,30 @@
   CODE TO RUN FOR THAT:
 snoopy - name of leader arm
 woodstock - name of follwer arm
-top usb c port - /dev/ttyACM0 (used for follower arm)
-bottom usb c port - /ev/ttyACM1 (used for leader arm)
+/dev/ttyACM0 (used for follower arm)
+/ev/ttyACM1 (used for leader arm)
 runs teleoperate arms:
 lerobot-teleoperate     --robot.type=so101_follower     --robot.port=/dev/ttyACM0     --robot.id=woodstock     --teleop.type=so101_leader     --teleop.port=/dev/ttyACM1     --teleop.id=snoopy
 Helpful link in setting up arms: https://huggingface.co/docs/lerobot/en/so101?example=Linux
 
 10/23/25
 - Continued to try to set up virtual follower and real leader arm
+  Code instructions:
+cd Documents
+cd leisaac
+conda activate leisaac
+rm ./datasets/dataset.hdf5 (only doing this because no data has been collected bc it keeps crashing, get new file if there is data there)
+python scripts/environments/teleoperation/teleop_se3_agent.py \
+  --task=LeIsaac-SO101-PickOrange-v0 \
+  --teleop_device=so101leader \
+  --port=/dev/ttyACM0 \
+  --num_envs=1 \
+  --device=cuda \
+  --enable_cameras \
+  --record \
+  --dataset_file=./datasets/dataset.hdf5 \
+  --recalibrate
+Make sure you have perms for the port!!!
 - Ran simulation to get video for powerpoint
   Code istructions:
 cd Documents
