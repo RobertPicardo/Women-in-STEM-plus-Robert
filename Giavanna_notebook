@@ -46,3 +46,12 @@ bottom usb c port - /ev/ttyACM1 (used for leader arm)
 runs teleoperate arms:
 lerobot-teleoperate     --robot.type=so101_follower     --robot.port=/dev/ttyACM0     --robot.id=woodstock     --teleop.type=so101_leader     --teleop.port=/dev/ttyACM1     --teleop.id=snoopy
 Helpful link in setting up arms: https://huggingface.co/docs/lerobot/en/so101?example=Linux
+
+10/23/25
+- Continued to try to set up virtual follower and real leader arm
+- Ran simulation to get video for powerpoint
+  Code istructions:
+cd Documents
+cd isaac_so_arm101
+conda activate isaaclab
+python scripts/rsl_rl/train.py --task SO-ARM100-Reach-v0
