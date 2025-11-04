@@ -81,4 +81,6 @@ python scripts/rsl_rl/train.py --task SO-ARM100-Reach-v0
 - Midterm presentation
 
 11/4/25
-- 
+- worked on combining lift and reach task to finalize the simulation
+Path: Documents/isaac_so_arm101/source/SO_100/SO_100/tasks
+- Added backlog items to sprint
