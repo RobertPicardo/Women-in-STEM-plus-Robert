@@ -71,3 +71,14 @@ cd Documents
 cd isaac_so_arm101
 conda activate isaaclab
 python scripts/rsl_rl/train.py --task SO-ARM100-Reach-v0
+
+10/28/25
+- worked on combining the lift and reach tasks as well as adding a desired place for the block to be placed. The new code did not work properly and led to the software crashing
+- finished slides for mideterm presentation
+- practiced midterm presentation
+
+10/30/25
+- Midterm presentation
+
+11/4/25
+- 
