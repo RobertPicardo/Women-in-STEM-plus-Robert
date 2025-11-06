@@ -83,3 +83,16 @@ Thrusday 10AM Rm235 Grad meeting with Akbas
   - worked on revisions to the SRS, adding to document control
   - finished slides for mideterm presentation
   - practiced midterm presentation to make sure we hit times twice
+
+10-30-25
+  - presentation day
+
+11-4-25
+  - worked on changing the simulation to lift the block to a certain location
+  - tried making numerous changes to the code that ended with the software crashing because of code issues
+  - ended up reverting to the original code
+
+11-6-25
+  - figured out how to adjust the final lift postion
+  - ran simulation to make sure it worked
+  - simulation still going so have to wait to see
