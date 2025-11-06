@@ -1,0 +1,6 @@
+dataset collection specifically refers to the recording of specific movements of the arm during when the user manually moving it
+	joint rotation
+	sensor color detection
+	claw state (open/closed)
+	length of time between each movement
+data is then used by the machine learning algorithm to determine what specific actions (datasets) are preferred
