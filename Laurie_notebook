@@ -43,3 +43,17 @@ Oct 28, 2025
 
 Nov 4, 2025
 - working on SDD
+
+Nov 6, 2025
+- researching part 2 of our project
+Leisaac teloperation feature is used to control the virtual arm in IsaacSim. This is used to generate high quality demonstration data through teloperation.
+This video shows how to starts IsaacSIm and how to operate the virtual robotic arm. https://www.youtube.com/watch?v=Y5pISY36cg4
+This is the command to control robotic arm using keyboard for easier testing: ./isaaclab.sh -p scripts/environments/teleoperation/teleop_se3_agent.py --task Isaac-Lift-Cube-Franka-IK-Rel-v0 --num_envs 1 --teleop_device keyboard
+LeRobotDatasheet: https://huggingface.co/blog/lerobot-datasets-v3
+To install datasheet environment: pip install "https://github.com/huggingface/lerobot/archive/33cad37054c2b594ceba57463e8f11ee374fa93c.zip"  # this will affect your local lerobot installation!
+Hugging Face: https://huggingface.co/docs/lerobot/en/lerobot-dataset-v3
+There are three pillars of data: 
+Tabular data- low dimensional, high frequency signals (states, actions, timestamps)
+Visual data- frames from the same episode/test are grouped, and videos are shared per camera
+metadata- records describing feature names. dtypes, shapes, frame rates, normalization stats, and episode segmentation
+
