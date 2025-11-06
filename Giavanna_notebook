@@ -83,4 +83,13 @@ python scripts/rsl_rl/train.py --task SO-ARM100-Reach-v0
 11/4/25
 - worked on combining lift and reach task to finalize the simulation
 Path: Documents/isaac_so_arm101/source/SO_100/SO_100/tasks
+Simulation wasn't finalized, decided to move from creating a new task to updating a current task to better suit the needs of the task we want to complete
+- Added backlog items to sprint
+
+11/6/25
+- worked on editing lift task to adda location to finalize the task
+we worked on editing the rewards and task completion setting to hopefully yeild better results
+Currently the simulation is running and working correctly
+A simulation with a higher number of itterations will be run at the end of class and we will investigate the progress of the iterations after the simulation has finished
+- I worked on my ethics paragraph for the SRS
 - Added backlog items to sprint
