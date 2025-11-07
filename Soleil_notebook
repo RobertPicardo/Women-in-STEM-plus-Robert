@@ -96,3 +96,7 @@ Thrusday 10AM Rm235 Grad meeting with Akbas
   - figured out how to adjust the final lift postion
   - ran simulation to make sure it worked
   - simulation still going so have to wait to see
+
+11-7-25
+  - resumed training of the robot for 20000 more iterations
+  - moved the goal position to be a rectangular section on the table the robot is on
