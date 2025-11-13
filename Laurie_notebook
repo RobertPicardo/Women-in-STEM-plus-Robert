@@ -57,3 +57,7 @@ Tabular data- low dimensional, high frequency signals (states, actions, timestam
 Visual data- frames from the same episode/test are grouped, and videos are shared per camera
 metadata- records describing feature names. dtypes, shapes, frame rates, normalization stats, and episode segmentation
 
+Nov 13, 2025
+- finalizing research for data collection
+This video helps with uploading the data sheet and gives a tutorial on how the arm and system should operate: https://www.youtube.com/watch?v=szS8T44F6-I
+- SRS ethics section
