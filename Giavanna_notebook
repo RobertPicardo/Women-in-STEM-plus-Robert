@@ -93,3 +93,43 @@ Currently the simulation is running and working correctly
 A simulation with a higher number of itterations will be run at the end of class and we will investigate the progress of the iterations after the simulation has finished
 - I worked on my ethics paragraph for the SRS
 - Added backlog items to sprint
+
+11/13/25
+- Investigated simulation results, currently the robot it usually sucsessfully lifting and reaching, but it is only placing the block correctly .6% of the time
+- simulation is finalized and working, just needs to run for longer so the robot can properly learn
+- We resumed the simulation so it would run through more iterations
+To do that:
+conda activat isaaclab
+cd Documents
+cd isaac_so_arm101
+python scripts/rsl_rl/train.py --task SO-ARM100-Lift-Cube-v0 --num_envs 1000 --max_iterations 20000 --resume
+
+Snapshot of current simulation:
+Computation: 13826 steps/s (collection: 1.647s, learning 0.089s)
+             Mean action noise std: 0.63
+          Mean value_function loss: 1.2387
+               Mean surrogate loss: -0.0019
+                 Mean entropy loss: 5.3516
+                       Mean reward: 84.48
+               Mean episode length: 250.00
+    Episode_Reward/reaching_object: 0.7536
+     Episode_Reward/lifting_object: 11.8111
+Episode_Reward/object_goal_tracking: 4.4819
+Episode_Reward/object_goal_tracking_fine_grained: 0.0216
+        Episode_Reward/action_rate: -0.0007
+          Episode_Reward/joint_vel: -0.0005
+            Curriculum/action_rate: -0.0001
+              Curriculum/joint_vel: -0.0001
+Metrics/object_pose/position_error: 0.2787
+Metrics/object_pose/orientation_error: 3.0676
+      Episode_Termination/time_out: 1.0000
+Episode_Termination/object_dropping: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 2616000
+                    Iteration time: 1.74s
+                      Time elapsed: 00:03:02
+                               ETA: 09:15:49
+This means the robot isn't dropping the black, it is able to pick it up correctly.
+It moves the object toward the goal sometimes
+And it barely places the object where it belongs.
+There are high errors with the placing which indicates we need to preform more iterations or change the reward
