@@ -133,3 +133,36 @@ This means the robot isn't dropping the black, it is able to pick it up correctl
 It moves the object toward the goal sometimes
 And it barely places the object where it belongs.
 There are high errors with the placing which indicates we need to preform more iterations or change the reward
+
+11/18/25
+- completed ethics and societal impact paragraph
+- Resumed simulation that got shut down
+Current Results:
+                     Learning iteration 48332/68299
+
+                       Computation: 2454 steps/s (collection: 0.898s, learning 0.080s)
+             Mean action noise std: 0.47
+          Mean value_function loss: 1.4243
+               Mean surrogate loss: -0.0091
+                 Mean entropy loss: 2.9439
+                       Mean reward: 112.47
+               Mean episode length: 250.00
+    Episode_Reward/reaching_object: 0.6218
+     Episode_Reward/lifting_object: 8.8675
+Episode_Reward/object_goal_tracking: 6.7973
+Episode_Reward/object_goal_tracking_fine_grained: 0.4044
+        Episode_Reward/action_rate: -0.0008
+          Episode_Reward/joint_vel: -0.0006
+            Curriculum/action_rate: -0.0001
+              Curriculum/joint_vel: -0.0001
+Metrics/object_pose/position_error: 0.1592
+Metrics/object_pose/orientation_error: 2.8625
+      Episode_Termination/time_out: 1.0000
+Episode_Termination/object_dropping: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 81600
+                    Iteration time: 0.98s
+                      Time elapsed: 00:00:34
+                               ETA: 05:39:43
+
+- looked over the research for data collection
