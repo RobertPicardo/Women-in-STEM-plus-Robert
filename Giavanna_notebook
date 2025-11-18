@@ -166,3 +166,41 @@ Episode_Termination/object_dropping: 0.0000
                                ETA: 05:39:43
 
 - looked over the research for data collection
+- Started trying to run the teleop command for the environment, currently working through issues
+current error message:
+[8.196s] Simulation App Starting
+2025-11-18 20:04:40 [8,620ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : TLAS limit buffer size 2921508224
+2025-11-18 20:04:40 [8,620ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : TLAS limit : valid true, within: false
+2025-11-18 20:04:40 [8,889ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults-transient/meshlights/forceDisable'
+[8.933s] app ready
+[11.979s] Simulation App Startup Complete
+Traceback (most recent call last):
+  File "/home/roboticarm/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.py", line 236, in <module>
+    main()
+  File "/home/roboticarm/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.py", line 100, in main
+    env_cfg = parse_env_cfg(args_cli.task, device=args_cli.device, num_envs=args_cli.num_envs)
+  File "/home/roboticarm/Documents/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/utils/parse_cfg.py", line 140, in parse_env_cfg
+    cfg = load_cfg_from_registry(task_name.split(":")[-1], "env_cfg_entry_point")
+  File "/home/roboticarm/Documents/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/utils/parse_cfg.py", line 57, in load_cfg_from_registry
+    cfg_entry_point = gym.spec(task_name.split(":")[-1]).kwargs.get(entry_point_key)
+  File "/home/roboticarm/miniconda3/envs/isaaclab/lib/python3.10/site-packages/gymnasium/envs/registration.py", line 1001, in spec
+    raise error.Error(f"No registered env with id: {env_id}")
+gymnasium.error.Error: No registered env with id: LeIsaac-SO101-LiftCube
+2025-11-18 20:04:43 [12,236ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2025-11-18 20:04:43 [12,236ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2025-11-18 20:04:43 [12,236ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2025-11-18 20:04:43 [12,236ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2025-11-18 20:04:43 [12,236ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2025-11-18 20:04:43 [12,236ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2025-11-18 20:04:43 [12,236ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2025-11-18 20:04:43 [12,236ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2025-11-18 20:04:43 [12,236ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2025-11-18 20:04:43 [12,236ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2025-11-18 20:04:43 [12,236ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2025-11-18 20:04:43 [12,236ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2025-11-18 20:04:43 [12,236ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Core' for removal
+2025-11-18 20:04:43 [12,239ms] [Warning] [omni.graph.core.plugin] Could not find category 'animation' for removal
+2025-11-18 20:04:43 [12,244ms] [Warning] [omni.fabric.plugin] gFabricState->gUsdStageToSimStageWithHistoryMap had 1 outstanding SimStageWithHistory(s) at shutdown
+2025-11-18 20:04:43 [12,245ms] [Warning] [carb.audio.context] 1 contexts were leaked
+2025-11-18 20:04:43 [12,262ms] [Warning] [carb] Recursive unloadAllPlugins() detected!
+(isaaclab) roboticarm@mp224:~/Documents/leisaac$
