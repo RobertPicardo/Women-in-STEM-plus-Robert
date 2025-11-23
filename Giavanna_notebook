@@ -204,3 +204,11 @@ gymnasium.error.Error: No registered env with id: LeIsaac-SO101-LiftCube
 2025-11-18 20:04:43 [12,245ms] [Warning] [carb.audio.context] 1 contexts were leaked
 2025-11-18 20:04:43 [12,262ms] [Warning] [carb] Recursive unloadAllPlugins() detected!
 (isaaclab) roboticarm@mp224:~/Documents/leisaac$
+
+11/20/25
+- ended old sprint and started new sprint
+- simulation had shut down when I opened the computer, but worked fine when I restarted it
+- worked on starting dataset collection
+- One of the issues was that table with cube didn't exist
+- Got the cube with table simulator working for teleop
+- But need to set up with the same table setup as the non teleop simulation
