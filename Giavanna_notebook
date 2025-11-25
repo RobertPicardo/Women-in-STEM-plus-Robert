@@ -242,7 +242,7 @@ Episode_Termination/object_dropping: 0.0000
                       Time elapsed: 00:00:04
                                ETA: 11:11:17
 - Started downloading softwares on laptop:
-Installed conda and created new environment: env_isaaclab
+Installed conda and created new environment: isaaclab
 installed CUDA and updated pip
 installed Isaac Sim packages
 installed Isaac Lab
