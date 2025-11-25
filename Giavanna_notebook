@@ -212,3 +212,37 @@ gymnasium.error.Error: No registered env with id: LeIsaac-SO101-LiftCube
 - One of the issues was that table with cube didn't exist
 - Got the cube with table simulator working for teleop
 - But need to set up with the same table setup as the non teleop simulation
+
+11/25/25
+- checked on simulation progress and restarted simulation:
+Learning iteration 70451/90450
+
+                       Computation: 2168 steps/s (collection: 1.027s, learning 0.080s)
+             Mean action noise std: 0.60
+          Mean value_function loss: 4.2316
+               Mean surrogate loss: 0.0012
+                 Mean entropy loss: 4.8806
+                       Mean reward: 0.69
+               Mean episode length: 24.93
+    Episode_Reward/reaching_object: 0.0485
+     Episode_Reward/lifting_object: 0.0675
+Episode_Reward/object_goal_tracking: 0.0382
+Episode_Reward/object_goal_tracking_fine_grained: 0.0002
+        Episode_Reward/action_rate: -0.0003
+          Episode_Reward/joint_vel: -0.0001
+            Curriculum/action_rate: -0.0001
+              Curriculum/joint_vel: -0.0001
+Metrics/object_pose/position_error: 0.3214
+Metrics/object_pose/orientation_error: 2.8846
+      Episode_Termination/time_out: 0.1271
+Episode_Termination/object_dropping: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 4800
+                    Iteration time: 1.11s
+                      Time elapsed: 00:00:04
+                               ETA: 11:11:17
+- Started downloading softwares on laptop:
+Installed conda and created new environment: env_isaaclab
+installed CUDA and updated pip
+installed Isaac Sim packages
+installed Isaac Lab
