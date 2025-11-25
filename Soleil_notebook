@@ -114,3 +114,8 @@ Thrusday 10AM Rm235 Grad meeting with Akbas
   - went over SRS v2 for a final time before submission
   - begin research on how to export data from IsaacLab
   - Work on poster
+
+11-25-25
+  - adjusted reaching distance to be within the range of the robotic arm
+  - trying to optimize simulation: Making sure the orientation of the block does not matter, making sure all spots are in reach
+  - seeing if i can get the arm to let go of the block when it is placed. Got it to work but now the thing has to relearn how to pick up the block unfortunately
