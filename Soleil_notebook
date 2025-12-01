@@ -119,3 +119,9 @@ Thrusday 10AM Rm235 Grad meeting with Akbas
   - adjusted reaching distance to be within the range of the robotic arm
   - trying to optimize simulation: Making sure the orientation of the block does not matter, making sure all spots are in reach
   - seeing if i can get the arm to let go of the block when it is placed. Got it to work but now the thing has to relearn how to pick up the block unfortunately
+
+12-1-25 AM
+Came in to make sure the simulation had run. It had stopped after 2000 runs. I restarted it for 20000
+
+PM
+Came to make sure it ran and someone was using the computer so I can not access the work to make sure it ran
