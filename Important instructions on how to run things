@@ -1,1 +1,11 @@
+Running leader and follower arms together on desktop:
+snoopy - name of leader arm
+woodstock - name of follwer arm
+/dev/ttyACM0 (used for follower arm)
+/dev/ttyACM1 (used for leader arm)
+runs teleoperate arms:
+lerobot-teleoperate     --robot.type=so101_follower     --robot.port=/dev/ttyACM0     --robot.id=woodstock     --teleop.type=so101_leader     --teleop.port=/dev/ttyACM1     --teleop.id=snoopy
+Helpful link in setting up arms: https://huggingface.co/docs/lerobot/en/so101?example=Linux
+Note: be sure to know what port each arm is on before running the code. If it failes try switching which port is connectted to which arm. If this still fails, be sure that you have access to the port
+
 
