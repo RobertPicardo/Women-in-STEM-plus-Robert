@@ -272,3 +272,5 @@ python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.p
 12/18/25
 - Looked over dataset research
 - Started working on creating a dataset on the laptop
+- added code to create varried lighting (block position, orientation, and camera pose is already randomized)
+  This added change will help the dataset to be more robust and allow the model to be better trained
