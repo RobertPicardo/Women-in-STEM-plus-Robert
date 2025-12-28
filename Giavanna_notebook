@@ -261,9 +261,14 @@ installed Isaac Lab
 
 12/27/25
 - continued for on setting up laptop
+- created new file in github with instructions on how to run things
 - set up table and cube scene for teleop
 Note: to run teleop you must find the scene and import it into the assets/scene foldor in Document/leisaac. Overwise you won't have the .usd files needed
 The .usd for the arm has already been put into the assets/robot folder so should not be issue
 CODE TO RUN:
 python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.py   --task=LeIsaac-SO101-LiftCube-v0   --teleop_device=keyboard   --num_envs=1   --device=cuda   --enable_cameras   --record   --dataset_file=./datasets/dataset.hdf5   --recalibrate
 (For better steps on how to run everything see important instructions on how to run things)
+
+12/18/25
+- Looked over dataset research
+- Started working on creating a dataset on the laptop
