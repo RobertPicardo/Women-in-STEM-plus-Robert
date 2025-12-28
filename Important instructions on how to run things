@@ -31,4 +31,9 @@ cd Documents
 cd isaac_so_arm101
 python scripts/rsl_rl/train.py --task SO-ARM100-Lift-Cube-v0 --num_envs 1000 --max_iterations 20000 --resume
 
-
+Running table_with_cube teleop on laptop:
+cd Documents
+cd leisaav
+conda activate isaaclab
+python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.py   --task=LeIsaac-SO101-LiftCube-v0   --teleop_device=keyboard   --num_envs=1   --device=cuda   --enable_cameras   --record   --dataset_file=./datasets/dataset.hdf5   --recalibrate
+NOTE: this runs teleop with the keyboard, look at the teloperate on desktop in kitchen scene for the real leader arm instructions and change the command based on that
