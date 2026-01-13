@@ -283,4 +283,8 @@ python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.p
 - Set up sprints for new semester
 
 1/13/26
-- 
+- Ran into issues trying to run the dataset collection
+- Worked through and fixed the issues, my carried light code had an issue but it was resolve
+- Connected the leader arm to the laptop
+- Important: When connectinng arm make sure you know what port it is plugged into and that you have perms
+- commands: b- start control, r- failed task, n- sucsessful task
