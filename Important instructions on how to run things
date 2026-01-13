@@ -7,6 +7,7 @@ runs teleoperate arms:
 lerobot-teleoperate     --robot.type=so101_follower     --robot.port=/dev/ttyACM0     --robot.id=woodstock     --teleop.type=so101_leader     --teleop.port=/dev/ttyACM1     --teleop.id=snoopy
 Helpful link in setting up arms: https://huggingface.co/docs/lerobot/en/so101?example=Linux
 Note: be sure to know what port each arm is on before running the code. If it failes try switching which port is connectted to which arm. If this still fails, be sure that you have access to the port
+Important: Make sure you have perms on the port
 
 Teleoperate with real leader arm in kitchen scene on desktop:
 cd Documents
@@ -25,15 +26,25 @@ python scripts/environments/teleoperation/teleop_se3_agent.py \
   --recalibrate
 Make sure you have perms for the port!!!
 
-Resuming simulation on desktop:
-conda activate isaaclab
-cd Documents
-cd isaac_so_arm101
-python scripts/rsl_rl/train.py --task SO-ARM100-Lift-Cube-v0 --num_envs 1000 --max_iterations 20000 --resume
+Resuming simulation on desktop (reinforcement learning):
+ONLY WORKS ON DESSKTOP
+1. Open the terminal
+2. enter the the environment with: conda activate isaaclab
+3. cd Documents
+4. cd isaac_so_arm101
+5. python scripts/rsl_rl/train.py --task SO-ARM100-Lift-Cube-v0 --num_envs 1000 --max_iterations 20000 --resume
+NOTE: You must be in the environment for the command to work
 
-Running table_with_cube teleop on laptop:
-cd Documents
-cd leisaav
-conda activate isaaclab
-python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.py   --task=LeIsaac-SO101-LiftCube-v0   --teleop_device=keyboard   --num_envs=1   --device=cuda   --enable_cameras   --record   --dataset_file=./datasets/dataset.hdf5   --recalibrate
-NOTE: this runs teleop with the keyboard, look at the teloperate on desktop in kitchen scene for the real leader arm instructions and change the command based on that
+Dataset collection:
+ONLY WORKS ON LAPTOP
+1. log onto the laptop (check your email for the login info Akbas sent it)
+2. Open the terminal
+3. cd Documents
+4. cd leisaac
+5. conda activate isaaclab
+6. Plug in the real leader arm to the computer, also plug in the power supply USE THE 5V ONE
+7. be sure you have port perms, sudo chmod 666 /dev/ttyACM0
+  The last string is the port you are getting access to, if using a different port change it
+8. python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.py   --task=LeIsaac-SO101-LiftCube-v0   --teleop_device=so101leader --port=/dev/ttyACM0   --num_envs=1  --device=cuda   --enable_cameras   --record   --dataset_file=./datasets/dataset.hdf5   --recalibrate --resume
+9. You will then need to calibrate the leader arm, follow the instructions that it gives you
+10. Important commands for dataset collection: b- start control, r- failed task, n- sucsessful task
