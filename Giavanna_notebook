@@ -289,4 +289,4 @@ python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.p
 - Important: When connectinng arm make sure you know what port it is plugged into and that you have perms
 - commands: b- start control, r- failed task, n- sucsessful task
 - Collected 131 sucsessful data points, prob need at least 1000
-- Came back to lab at 6:45, now have data points
+- Came back to lab at 6:45, now have 701 data points
