@@ -131,3 +131,12 @@ Came to make sure it ran and someone was using the computer so I can not access 
 
 12/11
 -run more simulations
+
+1-13-26
+Looked into some specifics with the code and how th robot is rewarded
+Learned how to use the leader arm to record data sets
+Looked into possible ways to remote into the computer so we can restart simulations
+
+1-15-26
+Made some changes to the simulation
+Increased rewards for lifting as well as enabled the debug view to see if there was anything obviously wrong
