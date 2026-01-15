@@ -290,3 +290,9 @@ python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.p
 - commands: b- start control, r- failed task, n- sucsessful task
 - Collected 131 sucsessful data points, prob need at least 1000
 - Came back to lab at 6:45, now have 701 data points
+
+1/15/26
+- got up to 1203 data points
+- tried to convert these data points nit it failed because the data didn't have all of the correct attributes
+- updated the scene code to add the wrist camera
+- updated the conversion script to allow for user input (a lot of stuff was previously hardcoded
