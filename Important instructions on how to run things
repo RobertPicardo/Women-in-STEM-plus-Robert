@@ -48,3 +48,5 @@ ONLY WORKS ON LAPTOP (stage light --> click default)
 8. python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.py   --task=LeIsaac-SO101-LiftCube-v0   --teleop_device=so101leader --port=/dev/ttyACM0   --num_envs=1  --device=cuda   --enable_cameras   --record   --dataset_file=./datasets/dataset.hdf5   --recalibrate --resume
 9. You will then need to calibrate the leader arm, follow the instructions that it gives you
 10. Important commands for dataset collection: b- start control, r- failed task, n- sucsessful task
+
+notes: N is good, R is bad
