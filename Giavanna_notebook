@@ -310,3 +310,4 @@ python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.p
 1/20/26
 - redownladed everything (isaaclab, isaacsim, leisaac, lerobot)
 - restarted simulation on desktop
+- current issue is that it's not importing tasks correctly
