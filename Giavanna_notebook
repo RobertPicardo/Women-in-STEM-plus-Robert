@@ -296,3 +296,17 @@ python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.p
 - tried to convert these data points nit it failed because the data didn't have all of the correct attributes
 - updated the scene code to add the wrist camera
 - updated the conversion script to allow for user input (a lot of stuff was previously hardcoded
+
+1/17/26
+- worked on addding wrist camera to the scene.
+- seems to be no documentation for it
+
+1/19/26
+- I think I broke it :(
+- reinstalling everything so it will run correctly
+- decided to instead make it so it doesn't need the wrist camera for data conversion instead of adding the wrist camera
+- found that huggingface has datasets we could use if it comes down to it
+
+1/20/26
+- redownladed everything (isaaclab, isaacsim, leisaac, lerobot)
+- restarted simulation on desktop
