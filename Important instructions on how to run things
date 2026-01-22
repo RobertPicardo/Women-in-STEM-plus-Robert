@@ -57,7 +57,7 @@ ONLY WORKS ON LAPTOP (stage light --> click default)
 2. Open the terminal
 3. cd Documents
 4. cd leisaac
-5. conda activate isaaclab
+5. conda activate leisaac
 6. Plug in the real leader arm to the computer, also plug in the power supply USE THE 5V ONE
 7. be sure you have port perms, sudo chmod 666 /dev/ttyACM0
   The last string is the port you are getting access to, if using a different port change it
