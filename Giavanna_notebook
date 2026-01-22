@@ -318,3 +318,7 @@ python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.p
 - Started the simulation on the desktop
 - Worked more on fixing the dataset collection
   Got the task to open, but crashed when i tried to start an episode
+  Got the kitchen scene working with the keyboard!
+  Seems to be issues with ending the simulation
+  Was able to get it to work with the cube task
+  Closed fine and seemed to run better with the cube
