@@ -311,3 +311,10 @@ python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.p
 - redownladed everything (isaaclab, isaacsim, leisaac, lerobot)
 - restarted simulation on desktop
 - current issue is that it's not importing tasks correctly
+- Worked on fixing the problems with starting the immetation datasetcollection again
+- Helped Robert get the robotic arm running with the camera
+
+1/22/26
+- Started the simulation on the desktop
+- Worked more on fixing the dataset collection
+  Got the task to open, but crashed when i tried to start an episode
