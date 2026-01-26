@@ -87,3 +87,30 @@ Jan 15, 2026
 Jan 19, 2026
 - ran/checked simulations 
 
+Jan 22, 2026
+- research how to export an imitation learning model onto a real robot
+How to upload a dataset to HuggingFace
+https://huggingface.co/docs/lerobot/en/il_robots#dataset-upload
+1. push dataset to HuggingFace Hub
+huggingface-cli upload ${HF_USER}/record-test ~/.cache/huggingface/lerobot/{repo-id} --repo-type dataset
+
+Training
+1. to train the robot use lerobot train script: https://github.com/huggingface/lerobot/blob/main/src/lerobot/scripts/lerobot_train.py
+2. some arguements will be needed so use this command (more details for each command line is on the lerobot website)
+lerobot-train \
+  --dataset.repo_id=${HF_USER}/so101_test \
+  --policy.type=act \
+  --output_dir=outputs/train/act_so101_test \
+  --job_name=act_so101_test \
+  --policy.device=cuda \
+  --wandb.enable=true \
+  --policy.repo_id=${HF_USER}/my_policy
+3. to resume from the last checkpoint use this example code
+lerobot-train \
+  --config_path=outputs/train/act_so101_test/checkpoints/last/pretrained_model/train_config.json \
+  --resume=true
+
+Jan 26, 2026
+- continue to run simulations
+
+
