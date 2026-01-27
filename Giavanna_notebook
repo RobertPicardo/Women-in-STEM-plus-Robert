@@ -323,3 +323,8 @@ python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.p
   Was able to get it to work with the cube task
   Closed fine and seemed to run better with the cube
 - working on fixing the dataset conversion so it will convert properly
+
+1/27/26
+- added stuff to the scrum
+- collected small dataset
+- worked on fixing the conversion with that dataset so we can start training
