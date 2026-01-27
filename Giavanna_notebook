@@ -322,3 +322,4 @@ python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.p
   Seems to be issues with ending the simulation
   Was able to get it to work with the cube task
   Closed fine and seemed to run better with the cube
+- working on fixing the dataset conversion so it will convert properly
