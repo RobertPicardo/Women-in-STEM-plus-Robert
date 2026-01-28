@@ -1,0 +1,16 @@
+config file for virtual arm:
+nano configs/so101_wrist_cam.yaml
+observations:
+  wrist_rgb:
+    type: camera
+    source: isaac
+    camera_name: wrist_camera
+    resolution: [640, 480]
+
+actions:
+  type: joint_position
+
+robot:
+  name: so101
+
+\\PENDING\\
