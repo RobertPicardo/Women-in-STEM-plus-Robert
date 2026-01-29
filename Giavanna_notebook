@@ -335,3 +335,6 @@ python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.p
 - Start simulation on desktop
 - Started dataset collection
   Created document with baad data
+  had no bad data so far
+  collected 200 data points
+  converted them
