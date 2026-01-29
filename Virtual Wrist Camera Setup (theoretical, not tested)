@@ -1,3 +1,11 @@
+isaacsim must to turned on first
+./isaac-sim.sh
+
+adding virtul camera to isaaclab:
+Load the SO-101 robot USD
+Select the wrist link
+Add → Sensor → Camera
+
 config file for virtual arm:
 nano configs/so101_wrist_cam.yaml
 observations:
@@ -13,4 +21,13 @@ actions:
 robot:
   name: so101
 
-\\PENDING\\
+code for running imitation learning:
+python lerobot/scripts/collect.py \
+  --env isaac \
+  --config configs/so101_wrist_cam.yaml \
+  --output datasets/so101_wrist_il \
+  --episodes 50
+
+
+FIXING THE CAMERA FOCUS:
+the camera itself has a screw lens which is manually turned to change the focus. it cannot be automatically adjusted using the code
