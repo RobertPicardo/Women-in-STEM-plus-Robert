@@ -330,3 +330,8 @@ python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.p
 - worked on fixing the conversion with that dataset so we can start training
 - Yay it is fixed
 - Run on leisaac env, go to the aloha and run the convert_to_lerobot.py
+
+1/29/26
+- Start simulation on desktop
+- Started dataset collection
+  Created document with baad data
