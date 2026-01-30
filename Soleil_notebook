@@ -148,3 +148,12 @@ run simulations
 1-22-26
 read trhough SRS and get rid of requirements that are not true
 continue trying to figure out why the software on the laptop is no longer working
+
+1-27-26
+Made progress on the simulation. Worked on this for the whole class trying to fix the bug we are having
+
+1-27-26 PM
+Came back later to make more changes to the code and run more simulations
+
+1-29-26
+Finally found a bug in the code that is creating an issue we are having. Ran the simulation again and got some progress
