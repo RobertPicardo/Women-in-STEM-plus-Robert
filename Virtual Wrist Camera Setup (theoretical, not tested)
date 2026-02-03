@@ -28,6 +28,23 @@ python lerobot/scripts/collect.py \
   --output datasets/so101_wrist_il \
   --episodes 50
 
+~~~~~~~~~~~~~~~~~OTHER METHODS~~~~~~~~~~~~~~
+add "camera" prim
+from omni.isaac.sensor import Camera
+wrist_cam = Camera(
+    prim_path="/World/Robot/wrist_link/WristCamera",
+    resolution=(640, 480),
+    frequency=30,
+)
+wrist_cam.initialize()
+
+different example of config path:
+cameras:
+  wrist:
+    type: isaac_sim
+    prim_path: /World/Robot/wrist_link/WristCamera
+    width: 640
+    height: 480
 
 FIXING THE CAMERA FOCUS:
 the camera itself has a screw lens which is manually turned to change the focus. it cannot be automatically adjusted using the code
