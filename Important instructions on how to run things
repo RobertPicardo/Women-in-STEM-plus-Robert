@@ -17,6 +17,19 @@ lerobot-teleoperate \
   --teleop.id=snoopy \
   --display_data=true
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ALTERNATE TELEOPERATE COMMAND
+lerobot-teleoperate \
+  --robot.type=so101_follower \
+  --robot.port=/dev/ttyACM0 \
+  --robot.id=woodstock \
+  --teleop.type=so101_leader \
+  --teleop.port=/dev/ttyACM1 \
+  --teleop.id=snoopy \
+  --robot.cameras+=wrist \
+  --display_data=true
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Helpful link in setting up arms: https://huggingface.co/docs/lerobot/en/so101?example=Linux
 Note: be sure to know what port each arm is on before running the code. If it failes try switching which port is connectted to which arm. If this still fails, be sure that you have access to the port
 Important: Make sure you have perms on the port
