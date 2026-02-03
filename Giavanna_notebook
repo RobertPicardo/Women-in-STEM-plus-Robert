@@ -338,3 +338,10 @@ python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.p
   had no bad data so far
   collected 200 data points
   converted them
+
+2/3/26
+- Installed Isaac-Gr00t
+  Ran into a lot of issues with different versions of packages not working together
+- Updated the code to work with our cube and table scene
+- Ran the training software and have issues I need to work through, but it is running and attatched to the W&B website
+  Logs and data are automattically uploaded
