@@ -116,6 +116,38 @@ Jan 26, 2026
 Jan 29, 2026
 - worked on sim error message
 
-Feb 4, 2026
-Block stacking research:
+Feb 5, 2026
+Placing an Object in a Container Research: 
+- ACT (action chunking transformers)
+- link to blog post: https://huggingface.co/blog/sherryxychen/train-act-on-so-101
+Summary:
+1. Set up hardware for teleoperation
+    - use a leader/follower plus two cameras 
+2. Collect demonstration data
+    - teloperate pick and place trajectories
+    - for the bloggers initial attempt they used 50 demos across fixed locations but it wasnt robust
+3. Train ACT policy
+    - use lerobot training/logging pipeline
+4. Run evaluation on robot
+    - test known positions first, then broader conditions
+    - first run failed 
+5. Debugging the data/robot pipeline
+    - fix camera viewpoint consistency between train/eval
+    - Fix camera angle issues that hide gripper contact
+    - ttop “teleop cheating” (operator using off-camera cues the robot won’t have)
+6. Standardize the setup
+    - keep hardware geometry fixed and reproducible
+    - resolve USB/camera identity issues (author had repeated disconnect/path swap problems with identical webcams)
+7. Improve task definition + evaluation pipeline
+    - formalize success/progress criteria
+    - add structured eval, not just ad hoc test clips
+8. Increase and diversity data 
+    - add more episodes and broader coverage 
+    - this was the key change that improved generalizations
+9. Retrain and re-evaluate iteratively
+    - after pipeline and data fixes, performance improved to about 90% in the distribution and 75% out of distribution
+10. Document failure modes and next upgrades
+    - remaining issues: some grasp-angle failures, off-center approaches, hardware fragility
+    - Suggested next steps: wrist camera, wider workspace coverage, more randomization, async inference
+
 
