@@ -150,6 +150,9 @@ Summary:
     - remaining issues: some grasp-angle failures, off-center approaches, hardware fragility
     - Suggested next steps: wrist camera, wider workspace coverage, more randomization, async inference
 
-Jan 6, 2026
+Feb 6, 2026
 - check on sim in the lab
 - video for another version of pick and place but the balls are placed in cups (go to 34:15): https://www.youtube.com/watch?v=DeBLc2D6bvg
+
+Feb 11, 2026
+- starting poster reviisons
