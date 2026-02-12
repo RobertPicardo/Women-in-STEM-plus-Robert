@@ -1,0 +1,3 @@
+git push -u origin main
+
+it will ask for username and password, but the password has to be a personal access token from settings > developer settings > personal access tokens
