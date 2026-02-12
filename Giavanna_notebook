@@ -345,3 +345,8 @@ python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.p
 - Updated the code to work with our cube and table scene
 - Ran the training software and have issues I need to work through, but it is running and attatched to the W&B website
   Logs and data are automattically uploaded
+
+2/5/26
+- Continued set up of gr00t
+- converted dataset
+- put dataset on huggingface
