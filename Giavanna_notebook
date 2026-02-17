@@ -358,4 +358,10 @@ python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.p
   Currently working on the camera formatting in the dataset
 
 2/17/26
-- 
+- Fixed the formatting issues between the data.
+  current data format works with gr00t
+- Having issues with the amount of memory needed to run the imitation learning
+  Fixes Tried:
+  - editing the .sh file so that it takes less memory to run
+  - clearing the cache
+- Currently working on shrinking the video quality
