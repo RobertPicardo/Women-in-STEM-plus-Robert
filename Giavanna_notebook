@@ -350,3 +350,12 @@ python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.p
 - Continued set up of gr00t
 - converted dataset
 - put dataset on huggingface
+
+2/12/26
+- Worked on fixing the issues with the dataset conversion and the imitation learning software
+  The are formatting issues between them that need to be fixed
+  When I fix one issue there is another one that comes up
+  Currently working on the camera formatting in the dataset
+
+2/17/26
+- 
