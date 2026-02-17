@@ -364,4 +364,4 @@ python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.p
   Fixes Tried:
   - editing the .sh file so that it takes less memory to run
   - clearing the cache
-- Currently working on shrinking the video quality
+  - shrinking the video quality
