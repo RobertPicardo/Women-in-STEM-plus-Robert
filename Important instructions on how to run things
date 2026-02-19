@@ -62,6 +62,7 @@ ONLY WORKS ON DESSKTOP
 4. cd isaac_so_arm101
 5. conda activate isaaclab 
 6. python scripts/rsl_rl/train.py --task SO-ARM100-Lift-Cube-v0 --num_envs 1000 --max_iterations 20000 --resume
+7. python scripts/rsl_rl/train.py --task SO-ARM100-Lift-Cube-v0 --num_envs 1000 --max_iterations 20000 --headless
 NOTE: You must be in the environment for the command to work
 
 Dataset collection:
