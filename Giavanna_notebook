@@ -365,3 +365,11 @@ python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.p
   - editing the .sh file so that it takes less memory to run
   - clearing the cache
   - shrinking the video quality
+- GPU isn't good enough
+
+2/18/26
+- researched different methods for imitation learning
+
+2/19/26
+- worked on setting up isaaclab for imitation learning
+- Worked on srs standards and constraints
