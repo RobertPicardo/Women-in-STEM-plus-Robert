@@ -80,3 +80,13 @@ ONLY WORKS ON LAPTOP (stage light --> click default)
 10. Important commands for dataset collection: b- start control, r- failed task, n- sucsessful task
 
 notes: N is good, R is bad
+
+
+HOW TO RUN IMITATION LEARNING FOR TEST DATASET:
+Log onto lap top
+  Username: seniordesign
+  Password: %fics4090
+Open terminal
+cd ~/Music/Lerobot
+conda activate leisaac
+  NOT LEROBOT!!! IDK WHY ITS SET UP THIS WAY, BUT IT IS
