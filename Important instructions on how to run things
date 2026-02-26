@@ -87,6 +87,9 @@ Log onto lap top
   Username: seniordesign
   Password: %fics4090
 Open terminal
-cd ~/Music/Lerobot
+cd ~/Music/lerobot
 conda activate leisaac
   NOT LEROBOT!!! IDK WHY ITS SET UP THIS WAY, BUT IT IS
+lerobot-train \
+  --config_path=outputs/train/act_so101_test/checkpoints/last/pretrained_model/train_config.json \
+  --resume=true
