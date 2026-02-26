@@ -373,3 +373,14 @@ python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.p
 2/19/26
 - worked on setting up isaaclab for imitation learning
 - Worked on srs standards and constraints
+
+2/24/26
+- Gave up on isaaclab bc too many formatting issues
+- Decided to use Lerobot and the real world (not simulation) for dataset collection. 
+- Downloaded and set up dataset collection with real robot
+- Fixed code to have more reasonable timings
+
+2/26/26
+- Continued research into imitation learning with real robot
+- setup robot for Robert to collect data
+
