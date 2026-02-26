@@ -383,4 +383,5 @@ python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.p
 2/26/26
 - Continued research into imitation learning with real robot
 - setup robot for Robert to collect data
-
+- Helped collect data
+- Started running imitation learning on the test dataset
