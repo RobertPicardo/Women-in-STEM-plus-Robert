@@ -385,3 +385,8 @@ python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.p
 - setup robot for Robert to collect data
 - Helped collect data
 - Started running imitation learning on the test dataset
+
+3/3/26
+- Updated scrumwise for next sprint
+- Tested the trained test model for imitation learning
+- Started training the final model on the bigger dataset
