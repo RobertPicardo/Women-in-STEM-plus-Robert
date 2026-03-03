@@ -1,6 +1,9 @@
 https://nvidia-isaac-ros.github.io/reference_workflows/isaac_for_manipulation/tutorials/sim_to_real/tutorial_sim_to_real.html
 ^Link to NVIDIA Tutorial, not specific to our robot tho
 
+https://developer.nvidia.com/blog/closing-the-sim-to-real-gap-training-spot-quadruped-locomotion-with-nvidia-isaac-lab/
+^This is with a diiferent robot, but it used the NVIDIA Jetson Orin.
+
 https://github.com/louislelay/kinova_isaaclab_sim2real
 ^ This is work someone else has done on a diferent robot, not sure how helpfu; it will be
 🤖 Sim2Real Deployment (ROS2)
