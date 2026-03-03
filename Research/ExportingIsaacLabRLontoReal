@@ -1,3 +1,6 @@
+https://docs.nvidia.com/learning/physical-ai/getting-started-with-isaac-lab/latest/an-introduction-to-robot-learning-and-isaac-lab/04-tying-it-all-together/01-tying-it-together.html#sim-to-real-workflows
+^Super basic workflow. Would prob be useful to look at and make sure you have all of the things nessisary for our model, but will not be any help actually doing the thing
+
 https://nvidia-isaac-ros.github.io/reference_workflows/isaac_for_manipulation/tutorials/sim_to_real/tutorial_sim_to_real.html
 ^Link to NVIDIA Tutorial, not specific to our robot tho
 
