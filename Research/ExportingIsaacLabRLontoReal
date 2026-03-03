@@ -1,1 +1,37 @@
+https://nvidia-isaac-ros.github.io/reference_workflows/isaac_for_manipulation/tutorials/sim_to_real/tutorial_sim_to_real.html
+^Link to NVIDIA Tutorial, not specific to our robot tho
+
+https://github.com/louislelay/kinova_isaaclab_sim2real
+^ This is work someone else has done on a diferent robot, not sure how helpfu; it will be
+🤖 Sim2Real Deployment (ROS2)
+The Sim2Real pipeline focuses on deploying trained reinforcement learning policies directly onto the real Kinova Gen3 robot using a minimal ROS2-based interface, with no dependency on Isaac Lab or Isaac Sim at runtime.
+
+Fake-hardware test
+You can first try to simulate the Kinova Gen3 in ROS2 using fake hardware mode:
+
+ros2 launch kortex_bringup gen3.launch.py robot_ip:=yyy.yyy.yyy.yyy use_fake_hardware:=true
+To test movement commands, send a simple joint trajectory:
+
+ros2 topic pub /joint_trajectory_controller/joint_trajectory trajectory_msgs/JointTrajectory "{
+  joint_names: [joint_1, joint_2, joint_3, joint_4, joint_5, joint_6, joint_7],
+  points: [
+    { positions: [0, 0, 0, 0, 0, 0, 0], time_from_start: { sec: 1 } },
+  ]
+}" -1
+Run the Reach Task with the trained policy to go to a certain predefined position:
+
+python3 scripts/sim2real/run_task_reach.py
+Real robot test
+The next step is to connect the same interface to the real Kinova Gen3 and execute the learned Reach Task in real-world conditions — using the exact same model and runtime logic validated in simulation.
+
+For that you'll run:
+
+ros2 launch kortex_bringup gen3_lite.launch.py robot_ip:=192.168.1.10
+And in the same way as simulation, in another terminal:
+
+python3 scripts/sim2real/run_task_reach.py
+Now your robot should be alternating between three positions.
+
+- Seems like the real robot is mimicing the actions of the simulatated robot? But I do think this would be a good start on conecting the simulated and real robot
+
 
