@@ -1,0 +1,18 @@
+1. Confirm observations are the real sensors can provide
+  Joint Positions and velocities
+
+2. https://developer.nvidia.com/blog/bridging-the-sim-to-real-gap-for-industrial-robotic-assembly-applications-using-nvidia-isaac-lab/
+
+3. run the play script 
+  https://isaac-sim.github.io/IsaacLab/main/source/experimental-features/newton-physics-integration/sim-to-real.html
+
+4. Sim to real verification
+  can export the policy and play it back on isaacsim
+  https://docs.isaacsim.omniverse.nvidia.com/4.5.0/isaac_lab_tutorials/tutorial_policy_deployment.html
+
+5. ROS2 Bridge
+  https://lycheeai-hub.com/project-so-arm101-x-isaac-sim-x-isaac-lab-tutorial-series
+
+6. Lerobot interface
+  plug in everything
+  https://www.linkedin.com/posts/asierarranz_isaacsim-isaaclab-lerobot-activity-7378719700756709377-23nj
