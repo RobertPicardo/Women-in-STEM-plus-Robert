@@ -1,4 +1,4 @@
----Setting up the robots--
+---Setting up the robots---
 - Follower arm
     - put the mat on th right side of the table
     - clamp the follower arm onto the mat (should be on top of the 'bot' and in front of the pink stick note
@@ -11,3 +11,7 @@
 - Leader arm
     - clamp the leader arm left of the follower arm, make sure you have enough space to move both comfortably
     - plug in the 5V power and the USB-C into the computer
+
+---Setting up  software---
+- Be sure that the robots are set up first
+- log into the computer, open the terminal, navigate to ~/Music/Lerobot
