@@ -22,5 +22,6 @@
 - Be sure that the robots are set up first
 - log into the computer, open the terminal, navigate to ~/Music/lerobot
 - conda activate leisaac (not lerobot!!!)
-- run 'lerobot-find-port' to figure out what port each robot it on
-- run 'sudo chmod 666 /dev/ttyACM*', where * = the number, prob 0 or 1, for the port of each robot
+- run 'lerobot-find-port' to figure out what port each robot is on, make sure the folloer is on 0 and the leader is on 1
+- If this is not correct, unplug both cords from the computer and plug them in again, be sure to plug in the follower first
+- run 'sudo chmod 666 /dev/ttyACM*', where * = the number, 0 or 1, for the port of each robot
