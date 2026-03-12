@@ -8,10 +8,16 @@
     - plug the webcam into the computer and set it up
     - Look at the photos in this folder, one shows the way I set up the cam, the other shows the view of the cam
         try to get the view to look as close as you can, it will make the robot better as that is what it was initially trained on
+    - don't forget to remove the cap on the camera and then put it back on when you are done (wrist)
+    - put the smaller cube on the workstation (more rigid one)
 - Leader arm
     - clamp the leader arm left of the follower arm, make sure you have enough space to move both comfortably
     - plug in the 5V power and the USB-C into the computer
-
+***IMPORTANT CAMERA INFORMATION***
+- I messed up when collecting the dataset, the wrist camera is called front and the front camera is called wrist
+- The camera will be index 4 and 6, make sure when the software opens and you see the videos, check the label
+- the front camera should be called ~~~.wrist and the wrist should be ~~~.front.
+- If this is not the case, close the software, switch which one is 4 and which one is 6 and rerun
 ---Setting up  software---
 - Be sure that the robots are set up first
 - log into the computer, open the terminal, navigate to ~/Music/Lerobot
