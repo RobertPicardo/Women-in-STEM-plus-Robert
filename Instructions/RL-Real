@@ -21,3 +21,6 @@
 ---Setting up  software---
 - Be sure that the robots are set up first
 - log into the computer, open the terminal, navigate to ~/Music/lerobot
+- conda activate leisaac (not lerobot!!!)
+- run 'lerobot-find-port' to figure out what port each robot it on
+- run 'sudo chmod 666 /dev/ttyACM*', where * = the number, prob 0 or 1, for the port of each robot
