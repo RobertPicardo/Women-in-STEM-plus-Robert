@@ -390,3 +390,14 @@ python ~/Documents/leisaac/scripts/environments/teleoperation/teleop_se3_agent.p
 - Updated scrumwise for next sprint
 - Tested the trained test model for imitation learning
 - Started training the final model on the bigger dataset
+
+3/5/26
+- Went to LB to show new model to project owner
+
+3/1226
+- Worked on installing and setting up RL
+
+3/13/26
+- Tested IL model in Micaplex and recorded results
+- Downloaded stuff from blog about RL with real robot
+- Made progress with setup
