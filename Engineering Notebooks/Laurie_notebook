@@ -171,6 +171,29 @@ Feb 26, 2026
 - make revisions to the poster
 - work on presentation
 
-Mar 3, 2026
+Mar 3 - 19, 2026
 - work on presentation
 
+Mar 24, 2026
+1. Transfer the Model Files
+- If the trained model is uploaded to HuggingFace, paste this command in bash:     huggingface-cli download your-username/so101-pick-and-place --local-dir ~/my_model
+- If the trained model is in a folder on the laptop, paste this command in bash:  scp -r ./my_trained_model jetson-user@jetson-ip-address:~/models/
+2. Environment Setup (On the Jetson)
+- Jetson needs LeRobot library and NVIDIA to talk to so101 motors
+- To install lerobot, paste these commands below:
+git clone https://github.com
+cd lerobot
+pip install -e "."
+- Open python and run import torch; print(torch.cuda.is_available()). If it's False, you must install the NVIDIA JetPack PyTorch wheel specifically for your JetPack version.
+3. Identify the So101 Port
+- Plug in the amr via USB abd find which port its on using this command:    ls /dev/ttyACM*
+4. Run the Model
+- Paste this command into bash: 
+python lerobot/scripts/eval.py \
+  --policy.path=~/my_model \
+  --robot.type=so101 \
+  --robot.port=/dev/ttyACM0 \
+  --robot.cameras='{"laptop": 0}'
+Note: If you used a specific camera during training (like a Realsense or USB webcam), ensure the --robot.cameras index matches what the Jetson sees (usually 0 or 1).
+Permissions: If you get a "Permission Denied" error on the serial port, run: sudo chmod 666 /dev/ttyACM0.
+Power: Ensure your Jetson is in High Performance Mode (sudo nvpmodel -m 0) so the model inference doesn't lag, which causes the arm to stutter.
