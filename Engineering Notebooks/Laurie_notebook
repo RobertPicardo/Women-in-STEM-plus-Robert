@@ -197,3 +197,7 @@ python lerobot/scripts/eval.py \
 Note: If you used a specific camera during training (like a Realsense or USB webcam), ensure the --robot.cameras index matches what the Jetson sees (usually 0 or 1).
 Permissions: If you get a "Permission Denied" error on the serial port, run: sudo chmod 666 /dev/ttyACM0.
 Power: Ensure your Jetson is in High Performance Mode (sudo nvpmodel -m 0) so the model inference doesn't lag, which causes the arm to stutter.
+
+Mar 26, 2026
+- poster edits
+- presentation edits
