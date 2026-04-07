@@ -121,3 +121,7 @@
 	researching how to connect the robotic arm model to jetson orion nano
 3-28-2026
 	set up both robotic arms to showcase imitation learning and teleoperation for Preview Day
+4-2-2026
+	researched ways to check the connection of robot arm servo in case it is broken
+4-7-2026
+	attempted to use external software to test servo, and helped Giavanna to troubleshoot robot and orin nano
