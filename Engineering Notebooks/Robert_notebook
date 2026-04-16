@@ -125,3 +125,9 @@
 	researched ways to check the connection of robot arm servo in case it is broken
 4-7-2026
 	attempted to use external software to test servo, and helped Giavanna to troubleshoot robot and orin nano
+4-9-2026
+	working on code for comparing IL and RL model data
+4-14-2026
+	upgrading code to give further data about both datasets including success rate and average completion time
+4-16-2026
+	completed code, including system which creates line graph showing the differences between both models
