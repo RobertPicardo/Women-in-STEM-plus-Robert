@@ -1,1 +1,232 @@
+The following script is the utils script for the deployment:
 
+# so101_utils.py
+import numpy as np
+from pathlib import Path
+from lerobot.motors import Motor, MotorCalibration, MotorNormMode
+from lerobot.motors.feetech import FeetechMotorsBus, OperatingMode
+import draccus
+import json
+
+# Joint order MUST match env-2.yaml: Shoulder_Rotation, Shoulder_Pitch,
+# Elbow, Wrist_Pitch, Wrist_Roll, Gripper
+MOTOR_IDS = {
+    "Shoulder_Rotation": 1,
+    "Shoulder_Pitch":    2,
+    "Elbow":             3,
+    "Wrist_Pitch":       4,
+    "Wrist_Roll":        5,
+    "Gripper":           6,
+}
+
+JOINT_ORDER = [
+    "Shoulder_Rotation",
+    "Shoulder_Pitch",
+    "Elbow",
+    "Wrist_Pitch",
+    "Wrist_Roll",
+    "Gripper",
+]
+
+ID_LIST = [MOTOR_IDS[j] for j in JOINT_ORDER]
+
+# Default joint positions from env-2.yaml init_state (radians)
+# Used to compute relative joint positions for the observation vector
+DEFAULT_JOINT_POS_RAD = np.array([
+    0.0,  # Shoulder_Rotation
+    0.0,  # Shoulder_Pitch
+    0.0,  # Elbow
+    0.0,  # Wrist_Pitch
+    0.0,  # Wrist_Roll
+    0.3,  # Gripper (open)
+])
+
+def load_calibration(robot_name: str):
+    """
+    Load the LeRobot calibration JSON for SO-101.
+
+    Returns the raw dict; FeetechMotorsBus accepts this.
+    """
+    calib_path = (
+        Path("~/.cache/huggingface/lerobot/calibration/robots/so101_follower")
+        .expanduser()
+        / f"{robot_name}.json"
+    )
+    if not calib_path.exists():
+        raise FileNotFoundError(
+            f"No calibration found at {calib_path}. "
+            f"Run: lerobot-calibrate --robot.type=so101_follower "
+            f"--robot.port=<PORT> --robot.id={robot_name}"
+        )
+
+    with open(calib_path, "r") as f:
+        calib = json.load(f)
+    return calib
+
+def setup_motors(port: str, robot_name: str) -> FeetechMotorsBus:
+    calibration = load_calibration(robot_name)
+
+    motors = {
+        name: Motor(motor_id, "sts3215", MotorNormMode.RANGE_M100_100)
+        for name, motor_id in MOTOR_IDS.items()
+    }
+
+    bus = FeetechMotorsBus(port=port, motors=motors, calibration=calibration)
+    bus.connect()
+
+    print("bus.motors keys:", list(bus.motors.keys()))
+
+
+
+The following is the deployment for the lift:
+
+# lift_deploy.py
+import time
+import numpy as np
+import torch
+from so101_utils import setup_motors, DEFAULT_JOINT_POS_RAD
+from so101_utils import MOTOR_IDS
+from so101_utils import ID_LIST, JOINT_ORDER
+
+
+NAME_LIST = JOINT_ORDER  # for clarity
+
+# ── Configuration ─────────────────────────────────────────────
+PORT        = "/dev/ttyACM0"     # replace with your port (lerobot-find-port)
+ROBOT_NAME  = "RL_test"       # must match your calibration file name
+POLICY_PATH = "/home/roboticarm/Documents/isaac_so_arm101/logs/rsl_rl/lift/2026-02-26_14-27-35/exported/policy.pt"  # replace with your exported policy path
+CONTROL_HZ  = 20                 # matches sim dt=0.01 * decimation=2
+DT          = 1.0 / CONTROL_HZ
+
+# Hardcoded block position in robot root frame (meters)
+# Measure this empirically by placing block at your marked table spot
+BLOCK_POS_ROBOT_FRAME = np.array([0.2, 0.0, 0.015])
+
+# Goal: lift block to 15cm above robot base, same XY as block
+# pos_z range in training was [0.015, 0.315] relative to Base link
+GOAL_POSE_7D = np.array([0.2, 0.0, 0.15, 1.0, 0.0, 0.0, 0.0])
+
+JOINT_ORDER = [
+    "Shoulder_Rotation", "Shoulder_Pitch", "Elbow",
+    "Wrist_Pitch", "Wrist_Roll", "Gripper"
+]
+def clamp_deg(x, lo=0.0, hi=270.0):
+    return max(lo, min(hi, x))
+    
+# ── Unit conversion helpers ───────────────────────────────────
+def degrees_to_rad(deg_dict: dict) -> np.ndarray:
+    """Read normalized degree values from bus → radians, ordered by JOINT_ORDER."""
+    return np.array([
+        np.deg2rad(deg_dict[j]) for j in JOINT_ORDER
+    ])
+
+def rad_to_degrees(rad_array: np.ndarray) -> dict:
+    """Convert radian action targets → degree dict for sync_write."""
+    return {
+        j: float(np.rad2deg(rad_array[i]))
+        for i, j in enumerate(JOINT_ORDER[:-1])  # arm joints only
+    }
+
+# ── Observation builder ───────────────────────────────────────
+def build_obs(joint_pos_rad: np.ndarray,
+              joint_vel_rad: np.ndarray,
+              last_action: np.ndarray) -> torch.Tensor:
+    # Relative joint positions: subtract sim default positions
+    joint_pos_rel = joint_pos_rad - DEFAULT_JOINT_POS_RAD
+    obs = np.concatenate([
+        joint_pos_rel,            # 6
+        joint_vel_rad,            # 6
+        BLOCK_POS_ROBOT_FRAME,    # 3
+        GOAL_POSE_7D,             # 7
+        last_action,              # 6
+    ])  # → [28]
+    return torch.tensor(obs, dtype=torch.float32).unsqueeze(0)
+
+# ── Main deployment loop ──────────────────────────────────────
+def main():
+    print("Loading policy...")
+    policy = torch.jit.load(POLICY_PATH, map_location="cpu")
+    policy.eval()
+
+    print(f"Connecting to SO-101 on {PORT}...")
+    bus = setup_motors(PORT, ROBOT_NAME)
+
+    last_action   = np.zeros(6)
+    prev_pos_rad  = None
+    prev_time     = None
+
+    print("Starting control loop. Ctrl+C to stop.")
+    try:
+        while True:
+            loop_start = time.time()
+
+            # ── 1. Read joint states ──────────────────────────
+            raw_pos = bus.sync_read("Present_Position", motors=JOINT_ORDER, normalize=False)
+            raw_pos_deg = [raw_pos[name] for name in JOINT_ORDER]
+            raw_pos_rad = np.deg2rad(np.array(raw_pos_deg))
+
+            # Approximate velocity: finite difference
+            if prev_pos_rad is None:
+                raw_vel_rad = np.zeros_like(raw_pos_rad)
+            else:
+                raw_vel_rad = (raw_pos_rad - prev_pos_rad) / DT
+
+            prev_pos_rad = raw_pos_rad.copy()
+
+
+
+            # ── 2. Build observation & run inference ──────────
+            obs = build_obs(raw_pos_rad, raw_vel_rad, last_action)
+
+            with torch.no_grad():
+                action = policy(obs).squeeze(0).numpy()  # [6]
+
+            last_action = action.copy()
+
+            # ── 3. Decode actions ─────────────────────────────
+            # Arm: JointPositionAction with scale=0.5 → absolute target in rad
+            arm_targets_rad = action[:5] * 0.5
+
+            # Gripper: binary → open=0.5 rad, close=0.0 rad
+            gripper_target_deg = 50.0 if action[5] > 0.0 else 0.0
+
+            # ── 4. Send commands ──────────────────────────────
+            # Arm joints: scale, convert to deg, then clamp
+            arm_cmd = {}
+            for i, name in enumerate(JOINT_ORDER[:5]):  # all except Gripper
+                target_deg = np.rad2deg(action[i] * 0.5)
+                target_deg = clamp_deg(target_deg, lo=0.0, hi=270.0)
+                arm_cmd[name] = int(round(target_deg))  # <- cast to int
+
+            gripper_target = 50.0 if action[5] > 0.0 else 0.0
+            gripper_cmd = {"Gripper": int(round(gripper_target))}
+
+            bus.sync_write("Goal_Position", arm_cmd,     normalize=False)
+            bus.sync_write("Goal_Position", gripper_cmd, normalize=False)
+
+
+
+            # ── 5. Pace loop to 50Hz ──────────────────────────
+            elapsed = time.time() - loop_start
+            sleep_time = max(0.0, DT - elapsed)
+            time.sleep(sleep_time)
+
+    except KeyboardInterrupt:
+        print("\nStopping. Moving to safe home position...")
+        home = {j: 0 for j in JOINT_ORDER[:-1]}  # integer degrees
+        home["Gripper"] = 50                     # open gripper on exit
+
+        bus.sync_write("Goal_Position", home, normalize=False)
+
+        time.sleep(1.0)
+        bus.disconnect()
+        print("Disconnected.")
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+    # Temporarily do NOT call bus.write; just return bus so we see the keys
+    return bus
